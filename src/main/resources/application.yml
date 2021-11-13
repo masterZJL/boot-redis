@@ -1,0 +1,29 @@
+spring:
+  redis:
+    database: 0
+    host: qingchuanyige.com
+    port: 6379
+    password:
+    lettuce:
+      pool:
+        max-active: 8
+        max-wait: -1ms
+        max-idle: 8
+        min-idle: 0
+  datasource:
+    url: jdbc:mysql://localhost:3306/redistest?useUnicode=true&serverTimezone=Asia/Shanghai
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    username: root
+    password:
+management:
+  endpoints:
+    web:
+      exposure:
+        include: info, health, beans, env, metrics
+
+mybatis:
+  configuration:
+    map-underscore-to-camel-case: true
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+#  mapper-locations: classpath:mappers/*.xml
+  type-aliases-package: com.zjl.study.bootredis.entity
